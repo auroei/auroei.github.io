@@ -155,147 +155,568 @@
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script>
 
-    function changePage(val){
+    function changePage(){
         window.location.href = "https://venk12.github.io/"
     }
-    var nodes_data = [{
+    var nodes_data = [
+        {
             "name": "Investment Climate Indices",
-            "icon": "main_node"
+            "icon": "main_node",
+            "class" : "main_node"
         }, 
         { "name": "Ease of doing business index",
-          "icon": "secondary_node"
+          "icon": "secondary_node",
+          "class" : "EODB"
         },
         {
-            "name": "UNCTAD",
-            "icon": "secondary_node"
+            "name": "Trade & Investment Index",
+            "icon": "secondary_node",
+            "class" : "UNCTAD"
         }, {
             "name": "Global Competitiveness Index",
-            "icon": "secondary_node"
+            "icon": "secondary_node",
+            "class" : "GCI"
         },{
             "name": "Starting a business",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "EODB"
         },
         {
             "name": "Dealing with Construction Permits",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "EODB"
         },
         {
             "name": "Getting Electricity",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "EODB"
         },{
             "name": "Registering Property",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "EODB"
         },{
             "name": "Getting Credit",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "EODB"
         },{
             "name": "Protecting Minority Investors",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "EODB"
         },
         {
             "name": "Paying Taxes",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "EODB"
         },
         {
             "name": "Trading across borders",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "EODB"
         },
         {
             "name": "Enforcing Contracts",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "EODB"
         },
         {
             "name": "Resolving insolvency",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "EODB"
         },
         {
-            "name": "Labor market regulation",
-            "icon": "tertiary_node"
+            "name": "Labor Market Regulation",
+            "icon": "tertiary_node",
+            "class": "EODB"
         },
         {
             "name": "International merchandise trade",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "UNCTAD"
         },
         {
-            "name": "Trade in services",
-            "icon": "tertiary_node"
+            "name": "International trade in services",
+            "icon": "tertiary_node",
+            "class": "UNCTAD"
         },
         {
-            "name": "Economic Trends",
-            "icon": "tertiary_node"
+            "name": "Economic trends",
+            "icon": "tertiary_node",
+            "class": "UNCTAD"
         },
         {
             "name": "Population",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "UNCTAD"
         },
         {
-            "name": "Maritime Transport",
-            "icon": "tertiary_node"
+            "name": "Maritime transport",
+            "icon": "tertiary_node",
+            "class": "UNCTAD"
         },
         {
             "name": "Institutions",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "GCI"
         },
         {
             "name": "Infrastructure",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "GCI"
         },
         {
             "name": "Macroeconomic environment",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "GCI"
         },
         {
             "name": "Health and primary education",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "GCI"
         },
         {
             "name": "Higher education and training",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "GCI"
         },
         {
             "name": "Goods market efficiency",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "GCI"
         },
         {
             "name": "Labor market efficiency",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "GCI"
         },
         {
             "name": "Financial market development",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "GCI"
         },
         {
             "name": "Technological readiness",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "GCI"
         },
         {
             "name": "Market size",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "GCI"
         },
         {
             "name": "Business sophistication",
-            "icon": "tertiary_node"
+            "icon": "tertiary_node",
+            "class": "GCI"
         },
         {
             "name": "Innovation",
-            "icon": "tertiary_node"
-        }     
+            "icon": "tertiary_node",
+            "class": "GCI"
+        },
+        {
+            "name": "Starting a business : Procedures (number)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Starting a business : Time (days)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Starting a business : Cost (% of income per capita)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Starting a business : Minimum capital (% of income per capita)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Dealing with Construction Permits : Procedures (number)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Dealing with Construction Permits : Time (days)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Dealing with Construction Permits : Cost (% of warehouse value)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Dealing with Construction Permits : Building quality control index (0–15)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Getting Electricity : Procedures (number)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Getting Electricity : Time (days)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Getting Electricity : Cost (% of income per capita)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Getting Electricity : Reliability of supply and transparency of tariffs index (0–8)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Registering Property : Procedures (number)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Registering Property : Time (days)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Registering Property : Cost (% of property value)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Registering Property : Quality of land administration index (0–30)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Getting Credit : Strength of legal rights index (0–12)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Getting Credit : Depth of credit information index (0–8)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Protecting Minority Investors : Extent of disclosure index (0–10)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Protecting Minority Investors : Extent of director liability index (0–10)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Protecting Minority Investors : Ease of shareholder suits index (0–10)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Protecting Minority Investors : Extent of shareholder rights index (0–10)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Protecting Minority Investors : Extent of ownership and control index (0–10)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Protecting Minority Investors : Extent of corporate transparency index (0–10)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Paying Taxes : Payments (number per year)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Paying Taxes : Time (hours per year)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Paying Taxes : Total tax and contribution rate (% of profit)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Paying Taxes : Postfiling index (0–100)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Trading across borders : Time to export",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Trading across borders : Cost to export",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Trading across borders : Time to import",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Trading across borders : Cost to import",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Enforcing Contracts : Time (days)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Enforcing Contracts : Cost (% of claim)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Enforcing Contracts : Quality of judicial processes index (0–18)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Resolving insolvency : Recovery rate (cents on the dollar)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Resolving insolvency : Strength of insolvency framework index (0–16)",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Labor Market Regulation : Hiring",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Labor Market Regulation : Working hours",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Labor Market Regulation : Redundancy rules",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Labor Market Regulation : Redundancy cost",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Labor Market Regulation : Job quality",
+            "icon": "quarternary_node",
+            "class": "EODB"
+        },
+        {
+            "name": "Total merchandise trade",
+            "icon": "quarternary_node",
+            "class": "UNCTAD"
+        },
+        {
+            "name": "Merchandise trade by partner",
+            "icon": "quarternary_node",
+            "class": "UNCTAD"
+        },
+        {
+            "name": "Merchandise trade by product",
+            "icon": "quarternary_node",
+            "class": "UNCTAD"
+        },
+        {
+            "name": "Trade indicators",
+            "icon": "quarternary_node",
+            "class": "UNCTAD"
+        },
+        {
+            "name": "Total trade in services",
+            "icon": "quarternary_node",
+            "class": "UNCTAD"
+        },
+        {
+            "name": "Trade in services by category",
+            "icon": "quarternary_node",
+            "class": "UNCTAD"
+        },
+        {
+            "name": "Gross domestic product",
+            "icon": "quarternary_node",
+            "class": "UNCTAD"
+        },
+        {
+            "name": "Current account",
+            "icon": "quarternary_node",
+            "class": "UNCTAD"
+        },
+        {
+            "name": "Foreign direct investment",
+            "icon": "quarternary_node",
+            "class": "UNCTAD"
+        },
+        {
+            "name": "Prices",
+            "icon": "quarternary_node",
+            "class": "UNCTAD"
+        },
+        {
+            "name": "Total and urban population",
+            "icon": "quarternary_node",
+            "class": "UNCTAD"
+        },
+        {
+            "name": "Age structure",
+            "icon": "quarternary_node",
+            "class": "UNCTAD"
+        },
+        {
+            "name": "World seaborne trade",
+            "icon": "quarternary_node",
+            "class": "UNCTAD"
+        },
+        {
+            "name": "Merchant fleet",
+            "icon": "quarternary_node",
+            "class": "UNCTAD"
+        },
+        {
+            "name": "Maritime transport indicators",
+            "icon": "quarternary_node",
+            "class": "UNCTAD"
+        },{
+            "name": "Property rights",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "Ethics and corruption",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "Undue influence",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "Public-sector performance",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "Security",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "Corporate Ethics",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "Accountability",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "Transport infrastructure",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "Electricity and telephony infrastructure",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "Health",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "Primary education",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "Quantity of education",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "Quality of education",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "On the job training",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "Domestic competition",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "Foreign competition",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "Quality of demand conditions",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "Flexibility",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "Efficient use of talent",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "Financial market efficiency",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "Trustworthiness and confidence",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "Technological adoption",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "ICT use",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "Domestic market size",
+            "icon": "quarternary_node",
+            "class": "GCI"
+        },{
+            "name": "Foreign market size" ,
+            "icon": "quarternary_node",
+            "class": "GCI"
+        }
     ]
 
     //Create links data 
-    var links_data = [{
+    var links_data = [
+        {
             "source": "Investment Climate Indices",
             "target": "Ease of doing business index",
             "theme": "a"
-        }, {
+        },
+        {
             "source": "Investment Climate Indices",
-            "target": "UNCTAD",
+            "target": "Trade & Investment Index",
             "theme": "a"
         }, {
             "source": "Investment Climate Indices",
             "target": "Global Competitiveness Index",
             "theme": "a"
-        }, {
+        },
+        {
             "source": "Ease of doing business index",
             "target": "Starting a business",
             "theme": "b"
@@ -337,27 +758,27 @@
             "theme": "b"
         }, {
             "source": "Ease of doing business index",
-            "target": "Labor market regulation",
+            "target": "Labor Market Regulation",
             "theme": "b"
         }, {
-            "source": "UNCTAD",
+            "source": "Trade & Investment Index",
             "target": "International merchandise trade",
             "theme": "b"
         }, {
-            "source": "UNCTAD",
-            "target": "Trade in services",
+            "source": "Trade & Investment Index",
+            "target": "International trade in services",
             "theme": "b"
         }, {
-            "source": "UNCTAD",
-            "target": "Economic Trends",
+            "source": "Trade & Investment Index",
+            "target": "Economic trends",
             "theme": "b"
         }, {
-            "source": "UNCTAD",
+            "source": "Trade & Investment Index",
             "target": "Population",
             "theme": "b"
         }, {
-            "source": "UNCTAD",
-            "target": "Maritime Transport",
+            "source": "Trade & Investment Index",
+            "target": "Maritime transport",
             "theme": "b"
         }, {
             "source": "Global Competitiveness Index",
@@ -407,11 +828,438 @@
             "source": "Global Competitiveness Index",
             "target": "Innovation",
             "theme": "b"
-        }  
+        },
+        {
+            "source": "Starting a business",
+            "target": "Starting a business : Procedures (number)",
+            "theme": "b"
+        },
+        {
+            "source": "Starting a business",
+            "target": "Starting a business : Time (days)",
+            "theme": "b"
+        },
+        {
+            "source": "Starting a business",
+            "target": "Starting a business : Cost (% of income per capita)",
+            "theme": "b"
+        },
+        {
+            "source": "Starting a business",
+            "target": "Starting a business : Minimum capital (% of income per capita)",
+            "theme": "b"
+        },
+        {
+            "source": "Dealing with Construction Permits",
+            "target": "Dealing with Construction Permits : Procedures (number)",
+            "theme": "b"
+        },
+        {
+            "source": "Dealing with Construction Permits",
+            "target": "Dealing with Construction Permits : Time (days)",
+            "theme": "b"
+        },
+        {
+            "source": "Dealing with Construction Permits",
+            "target": "Dealing with Construction Permits : Cost (% of warehouse value)",
+            "theme": "b"
+        },
+        {
+            "source": "Dealing with Construction Permits",
+            "target": "Dealing with Construction Permits : Building quality control index (0–15)",
+            "theme": "b"
+        },
+        {
+            "source": "Getting Electricity",
+            "target": "Getting Electricity : Procedures (number)",
+            "theme": "b"
+        },
+        {
+            "source": "Getting Electricity",
+            "target": "Getting Electricity : Time (days)",
+            "theme": "b"
+        },
+        {
+            "source": "Getting Electricity",
+            "target": "Getting Electricity : Cost (% of income per capita)",
+            "theme": "b"
+        },
+        {
+            "source": "Getting Electricity",
+            "target": "Getting Electricity : Reliability of supply and transparency of tariffs index (0–8)",
+            "theme": "b"
+        },
+        {
+            "source": "Registering Property",
+            "target": "Registering Property : Procedures (number)",
+            "theme": "b"
+        },
+        {
+            "source": "Registering Property",
+            "target": "Registering Property : Time (days)",
+            "theme": "b"
+        },
+        {
+            "source": "Registering Property",
+            "target": "Registering Property : Cost (% of property value)",
+            "theme": "b"
+        },
+        {
+            "source": "Registering Property",
+            "target": "Registering Property : Quality of land administration index (0–30)",
+            "theme": "b"
+        },
+        {
+            "source": "Getting Credit",
+            "target": "Getting Credit : Strength of legal rights index (0–12)",
+            "theme": "b"
+        },
+        {
+            "source": "Getting Credit",
+            "target": "Getting Credit : Depth of credit information index (0–8)",
+            "theme": "b"
+        },
+        {
+            "source": "Protecting Minority Investors",
+            "target": "Protecting Minority Investors : Extent of disclosure index (0–10)",
+            "theme": "b"
+        },
+        {
+            "source": "Protecting Minority Investors",
+            "target": "Protecting Minority Investors : Extent of director liability index (0–10)",
+            "theme": "b"
+        },
+        {
+            "source": "Protecting Minority Investors",
+            "target": "Protecting Minority Investors : Ease of shareholder suits index (0–10)",
+            "theme": "b"
+        },
+        {
+            "source": "Protecting Minority Investors",
+            "target": "Protecting Minority Investors : Extent of shareholder rights index (0–10)",
+            "theme": "b"
+        },
+        {
+            "source": "Protecting Minority Investors",
+            "target": "Protecting Minority Investors : Extent of ownership and control index (0–10)",
+            "theme": "b"
+        },
+        {
+            "source": "Protecting Minority Investors",
+            "target": "Protecting Minority Investors : Extent of corporate transparency index (0–10)",
+            "theme": "b"
+        },
+        {
+            "source": "Paying Taxes",
+            "target": "Paying Taxes : Payments (number per year)",
+            "theme": "b"
+        },
+        {
+            "source": "Paying Taxes",
+            "target": "Paying Taxes : Time (hours per year)",
+            "theme": "b"
+        },
+        {
+            "source": "Paying Taxes",
+            "target": "Paying Taxes : Total tax and contribution rate (% of profit)",
+            "theme": "b"
+        },
+        {
+            "source": "Paying Taxes",
+            "target": "Paying Taxes : Postfiling index (0–100)",
+            "theme": "b"
+        },
+        {
+            "source": "Trading across borders",
+            "target": "Trading across borders : Time to export",
+            "theme": "b"
+        },
+        {
+            "source": "Trading across borders",
+            "target": "Trading across borders : Cost to export",
+            "theme": "b"
+        },
+        {
+            "source": "Trading across borders",
+            "target": "Trading across borders : Time to import",
+            "theme": "b"
+        },
+        {
+            "source": "Trading across borders",
+            "target": "Trading across borders : Cost to import",
+            "theme": "b"
+        },
+        {
+            "source": "Enforcing Contracts",
+            "target": "Enforcing Contracts : Time (days)",
+            "theme": "b"
+        },
+        {
+            "source": "Enforcing Contracts",
+            "target": "Enforcing Contracts : Cost (% of claim)",
+            "theme": "b"
+        },
+        {
+            "source": "Enforcing Contracts",
+            "target": "Enforcing Contracts : Quality of judicial processes index (0–18)",
+            "theme": "b"
+        },
+        {
+            "source": "Resolving insolvency",
+            "target": "Resolving insolvency : Recovery rate (cents on the dollar)",
+            "theme": "b"
+        },
+        {
+            "source": "Resolving insolvency",
+            "target": "Resolving insolvency : Strength of insolvency framework index (0–16)",
+            "theme": "b"
+        },
+        {
+            "source": "Resolving insolvency",
+            "target": "Resolving insolvency : Strength of insolvency framework index (0–16)",
+            "theme": "b"
+        },
+        {
+            "source": "Labor Market Regulation",
+            "target": "Labor Market Regulation : Hiring",
+            "theme": "b"
+        },
+        {
+            "source": "Labor Market Regulation",
+            "target": "Labor Market Regulation : Working hours",
+            "theme": "b"
+        },
+        {
+            "source": "Labor Market Regulation",
+            "target": "Labor Market Regulation : Redundancy rules",
+            "theme": "b"
+        },
+        {
+            "source": "Labor Market Regulation",
+            "target": "Labor Market Regulation : Redundancy cost",
+            "theme": "b"
+        },
+        {
+            "source": "Labor Market Regulation",
+            "target": "Labor Market Regulation : Job quality",
+            "theme": "b"
+        },
+        {
+            "source": "International merchandise trade",
+            "target": "Total merchandise trade",
+            "theme": "b"
+        },
+        {
+            "source": "International merchandise trade",
+            "target": "Merchandise trade by partner",
+            "theme": "b"
+        },
+        {
+            "source": "International merchandise trade",
+            "target": "Merchandise trade by product",
+            "theme": "b"
+        },
+        {
+            "source": "International merchandise trade",
+            "target": "Trade indicators",
+            "theme": "b"
+        },
+        {
+            "source": "International trade in services",
+            "target": "Total trade in services",
+            "theme": "b"
+        },
+        {
+            "source": "International trade in services",
+            "target": "Trade in services by category",
+            "theme": "b"
+        },
+        {
+            "source": "Economic trends",
+            "target": "Gross domestic product",
+            "theme": "b"
+        },
+        {
+            "source": "Economic trends",
+            "target": "Current account",
+            "theme": "b"
+        },
+        {
+            "source": "Economic trends",
+            "target": "Foreign direct investment",
+            "theme": "b"
+        },
+        {
+            "source": "Economic trends",
+            "target": "Prices",
+            "theme": "b"
+        },
+        {
+            "source": "Population",
+            "target": "Total and urban population",
+            "theme": "b"
+        },
+        {
+            "source": "Population",
+            "target": "Age structure",
+            "theme": "b"
+        },
+        {
+            "source": "Maritime transport",
+            "target": "World seaborne trade",
+            "theme": "b"
+        },
+        {
+            "source": "Maritime transport",
+            "target": "Merchant fleet",
+            "theme": "b"
+        },
+        {
+            "source": "Maritime transport",
+            "target": "Maritime transport indicators",
+            "theme": "b"
+        },
+        {
+            "source": "Institutions",
+            "target": "Property rights",
+            "theme": "b"
+        },
+        {
+            "source": "Institutions",
+            "target": "Ethics and corruption",
+            "theme": "b"
+        },
+        {
+            "source": "Institutions",
+            "target": "Undue influence",
+            "theme": "b"
+        },
+        {
+            "source": "Institutions",
+            "target": "Public-sector performance",
+            "theme": "b"
+        },
+        {
+            "source": "Institutions",
+            "target": "Security",
+            "theme": "b"
+        },
+        {
+            "source": "Institutions",
+            "target": "Corporate Ethics",
+            "theme": "b"
+        },
+        {
+            "source": "Institutions",
+            "target": "Accountability",
+            "theme": "b"
+        },
+        {
+            "source": "Infrastructure",
+            "target": "Transport infrastructure",
+            "theme": "b"
+        },
+        {
+            "source": "Infrastructure",
+            "target": "Electricity and telephony infrastructure",
+            "theme": "b"
+        },
+        {
+            "source": "Health and primary education",
+            "target": "Health",
+            "theme": "b"
+        },
+        {
+            "source": "Health and primary education",
+            "target": "Primary education",
+            "theme": "b"
+        },
+        {
+            "source": "Higher education and training",
+            "target": "Quantity of education",
+            "theme": "b"
+        },
+        {
+            "source": "Higher education and training",
+            "target": "Quality of education",
+            "theme": "b"
+        },
+        {
+            "source": "Higher education and training",
+            "target": "On the job training",
+            "theme": "b"
+        },
+        {
+            "source": "Goods market efficiency",
+            "target": "Domestic competition",
+            "theme": "b"
+        },
+        {
+            "source": "Goods market efficiency",
+            "target": "Foreign competition",
+            "theme": "b"
+        },
+        {
+            "source": "Goods market efficiency",
+            "target": "Quality of demand conditions",
+            "theme": "b"
+        },
+        {
+            "source": "Labor market efficiency",
+            "target": "Flexibility",
+            "theme": "b"
+        },
+        {
+            "source": "Labor market efficiency",
+            "target": "Efficient use of talent",
+            "theme": "b"
+        },
+        {
+            "source": "Financial market development",
+            "target": "Financial market efficiency",
+            "theme": "b"
+        },
+        {
+            "source": "Financial market development",
+            "target": "Trustworthiness and confidence",
+            "theme": "b"
+        },
+        {
+            "source": "Technological readiness",
+            "target": "Technological adoption",
+            "theme": "b"
+        },
+        {
+            "source": "Technological readiness",
+            "target": "ICT use",
+            "theme": "b"
+        },
+        {
+            "source": "Market size",
+            "target": "Domestic market size",
+            "theme": "b"
+        },
+        {
+            "source": "Market size",
+            "target": "Foreign market size",
+            "theme": "b"
+        }
+
     ]
 
     var index_defn = [{
-
+        "indct": "Ease of doing business index",
+        "defn": "Source: World Economic Forum ; Saudi Rank - 39/140"
+    },
+    {
+        "indct": "Trade & Investment Index",
+        "defn": "Source: UNCTAD ; Saudi Rank - 39/140"
+    },
+    {
+        "indct": "Global Competitiveness Index",
+        "defn": "Source: World Economic Forum ; Saudi Rank - 39/140"
+    },
+    {
         "indct": "Starting a business",
         "defn": " DESCRIPTION : This topic measures the number of procedures, time, cost and paid-in minimum capital requirement for a small- to medium-size limited liability company to start up and formally operate in each economy’s largest business city.  To make the data comparable across 190 economies, Doing Business uses a standardized business that is 100% domestically owned, has a start-up capital equivalent to 10 times the income per capita, engages in general industrial or commercial activities and employs between 10 and 50 people one month after the commencement of operations, all of whom are domestic nationals.  The starting a business indicators consider two cases of local limited liability companies that are identical in all aspects, except that one company is owned by five married women and the other by five married men.  The overall score for starting a business is the average of the scores obtained for each of the component indicators."
     }, {
@@ -452,7 +1300,7 @@
         "defn": " DESCRIPTION : Time, cost, outcome and recovery rate for a commercial insolvency and the strength of the legal framework for insolvency"
     }, {
 
-        "indct": "Labor market regulation",
+        "indct": "Labor Market Regulation",
         "defn": " DESCRIPTION : Flexibility in employment regulation and aspects of job quality"
     }, {
 
@@ -1826,16 +2674,16 @@
         "indct": "International merchandise trade",
         "defn": "Intra-trade is the trade between economies belonging to the same group. Extra-trade is the trade of economies of the same group with all economies outside the group. It represents the difference between a group’s total trade and intra-trade. In theory, the exports from an economy A to an economy B, should equal the imports of economy B from economy A recorded FOB. In practice, however, the values of both fl ows are often different. The reasons for these trade asymmetries comprise: different times of recording, different treatment of transit trade, underreporting, measurement errors and mis-pricing or mis-invoicing. The exports to (imports from) all economies of the world do not always exactly add up to total exports (imports). The difference is caused by ship stores, bunkers and other exports of minor importance."
     },{
-        "indct": "Trade in services",
+        "indct": "International trade in services",
         "defn": "GDP is an aggregate measure of production, income and expenditure of an economy. As production measure, it represents the gross value added, i.e. the output net of intermediate consumption, achieved by all resident units engaged in production, plus any taxes less subsidies on products not included in the value of output. As income measure, it represents the sum of primary incomes (gross wages and entrepreneurial income) distributed by resident producers, plus taxes and less subsidies on production and imports. As expenditure measure, it represents the sum of expenditure on final consumption, gross capital formation (i.e. investment) and exports after deduction of imports ( United Nations et al., 2009). The GDP figures presented in this section are calculated from the expenditure side."
     },{
-        "indct": "Economic Trends",
+        "indct": "Economic trends",
         "defn": "In this chapter, in accordance with the concepts of the balance of payments (International Monetary Fund, 2009) and of the national accounts (United Nations et al., 2009 ), services are understood as the result of a production activity that changes the conditions of the consuming units, or facilitates the exchange of products or financial assets. Services are not generally separate items over which ownership rights can be established. They cannot generally be separated from their production. Trade in services, as represented by the data in this chapter, takes place when a service is supplied in any of the following modes: from one economy to another (services cross the border); within an economy to a service consumer of another economy (consumer crosses the border); through the presence of natural persons of one economy in another economy (supplier crosses the border) ( United Nations et al., 2012)."
     },{
         "indct": "Population",
         "defn": "The population estimates and projections reported in this chapter represent the 'de facto' population as of the 1st of July of a given year ( United Nations, 2017). The figures for the years 2015–2050 are based on the medium variant projection. This assumes that the average fertility rate of the world will decline from 2.5 births per woman in 2010–2015 to 2.2 in 2045–2050. Future population growth is highly dependent on the path that future fertility will take. Relatively small changes in the frequency of childbearing, when projected over several decades, can generate large differences in total population (ibid.). Urban population is defined as the 'de facto' population living in areas classified as urban according to the criteria used by each country or territory ( United Nations, 2018b)."
     },{
-        "indct": "Maritime Transport",
+        "indct": "Maritime transport",
         "defn": "The figures on seaborne trade in this section measure the volumes, in metric tons, of goods loaded and unloaded in the world’s seaports for international shipment. Cabotage and transshipments are not included. The data have been compiled from various sources including country reports as well as port industry and other specialist websites. Surpluses or deficits in volume terms are not necessarily related to commercial balances of payments, as different types of cargo may have different monetary value per metric ton. Goods loaded for international shipment are assumed to be exports, while goods unloaded from ships are assumed to be imports. The seaborne trade balance measures the difference between the volumes of loaded and unloaded goods."
     },{
         "indct": "Institutions",
@@ -1945,8 +2793,10 @@
         }
     }
 
-    var attractForce = d3.forceManyBody().strength(100).distanceMax(10).distanceMin(1);
-    var repelForce = d3.forceManyBody().strength(-500).distanceMax(300).distanceMin(1);
+    // var attractForce = d3.forceManyBody().strength(100).distanceMax(0).distanceMin(200);
+    // var repelForce = d3.forceManyBody().strength(-500).distanceMax(100).distanceMin(1);
+    var attractForce = d3.forceManyBody().strength(100).distanceMax(5).distanceMin(1);
+    var repelForce = d3.forceManyBody().strength(-500).distanceMax(100).distanceMin(1);
 
     var simulation = d3.forceSimulation()
         .nodes(nodes_data)
@@ -1987,6 +2837,7 @@
         .attr("fill", nodeColour)
         .style("filter", "url(#glow)")
         .style("stroke", "white")
+        .style("opacity", nodeOpacity)
         .on("mouseover", function(d) {
             tooltip.style("visibility", "visible").text(d.name)
             tooltip.style("background-color", "#395C6B")
@@ -1995,9 +2846,9 @@
         })
         .on("mouseout", function() {
             // tooltip.style("visibility", "hidden");
-            this.style.opacity = 0.4
+            this.style.opacity = 0.6
         })
-        .style("opacity", 0.6);
+        // .style("opacity", 0.6);
 
     node.append("text")
         .raise()
@@ -2005,7 +2856,7 @@
         .attr("fill", "white")
         .attr("text-anchor", "start")
         .text(function(d) {
-            if (d.icon == "secondary_node" || d.icon == "main_node") {
+            if (d.icon == "secondary_node") {
                 return d.name;
             }
         })
@@ -2079,48 +2930,74 @@
     }
 
     function nodeColour(d) {
-        if (d.icon == "main_node") {
+        // if (d.icon == "main_node") {
+        //     return "yellow"
+        // } else if (d.icon == "secondary_node") {
+        //     return "#145C9E"
+        // } else if (d.icon == "tertiary_node") {
+        //     return "#AFF9C9"
+        // } else if (d.icon == "quarternary_node"){
+        //     return 'white'
+        // }
+        if(d.class == "main_node"){
             return "yellow"
+        }
+        else if(d.class == "EODB"){
+            return "#92A495"
+        } else if (d.class == "GCI"){
+            return "#A71D31"
+        } else if (d.class == "UNCTAD"){
+            return "#99cc33"
+        }
+    }
+
+    function nodeOpacity(d){
+        if (d.icon == "main_node") {
+            return 0.8
         } else if (d.icon == "secondary_node") {
-            return "#145C9E"
+            return 0.8
         } else if (d.icon == "tertiary_node") {
-            return "#AFF9C9"
+            return 0.8
+        } else if (d.icon == "quarternary_node"){
+            return 0.4
         }
     }
 
     function nodeSize(d) {
         if (d.icon == "main_node") {
-            return 4
+            return 10
         } else if (d.icon == "secondary_node") {
-            return 12
-        } else {
-            return 10;
+            return 10
+        } else if (d.icon == "tertiary_node") {
+            return 8;
+        }
+        else{
+            return 6;
         }
     }
 
     function linkColour(d) {
         if (d.theme == "a") {
-            return "#002642"
+            return "#eeeeee"
         } else {
             return "#12664F"
         }
     }
 
     function initiateDisplay(d) {
-
         var children_details=[]
-        console.log(d)
+        // children_node.push(d)
+
         children_nodes = findChild(d, links_data)
-        // if(children_nodes.length==0){
-        //     console.log("tertiary node : ",d)
-        // }
-        // else{
-        //     console.log("secondary node : ",d)
+
+        // if(d=="Global Competitiveness Index"){
+            children_nodes.push(d)
         // }
 
         for(i=0; i<children_nodes.length;i++){            
             children_details.push(findDescription(children_nodes[i],index_defn))
         }
+        console.log(children_details)
         displayNodeDetails(children_nodes,children_details)
 
     }
